@@ -1,0 +1,20 @@
+{% extends "dssv.html" %}
+{% block title %}
+DSSV
+{% endblock %}
+
+
+{% block content %}
+<h1>
+      {% if latest_SinhVien_list %}
+          <ul>
+          {% for SinhVien in latest_SinhVien_list %}
+              <li><a href="/ThongTinSV/{{ SinhVien.id }}/">{{ SinhVien.ho_ten }}</a></li>
+          {% endfor %}
+          </ul>
+      {% else %}
+          <p>No polls are available.</p>
+      {% endif %}
+
+  </h1>
+{% endblock %}
